@@ -2,6 +2,10 @@ import time
 import pandas as pd
 import numpy as np
 
+#This program was written by Jason for the Udacity course using Udacity's starter template. 
+
+
+
 CITY_DATA = { 'chicago': 'chicago.csv',
               'new york city': 'new_york_city.csv',
               'washington': 'washington.csv' }
