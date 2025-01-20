@@ -20,7 +20,7 @@ def get_filters():
         (str) day - name of the day of week to filter by, or "all" to apply no day filter
     """
     print('Hello! Let\'s explore some US bikeshare data!')
-    # TO DO: get user input for city (chicago, new york city, washington). HINT: Use a while loop to handle invalid inputs
+    
     
     city = input("Enter City Name \n Available options are: \n chicago \n new york city \n washington: \n")
     # loop for invalid inputs on city
@@ -28,7 +28,7 @@ def get_filters():
         print ("Please input a valid city name")
         city = input("Enter City Name \n Available options are: \n chicago \n new york city \n washington: \n")
 
-    # TO DO: get user input for month (all, january, february, ... , june)
+    
     
     month = input(
 "Enter month for filter options \n available options include \n all (for no filter)"
@@ -38,7 +38,7 @@ def get_filters():
         print("Please input a valid month")
         month = input("Enter month for filter options \n available options include \n all (for no filter) \n january \n february \n march \n april \n may \n june: \n")
 
-    # TO DO: get user input for day of week (all, monday, tuesday, ... sunday)
+    
     day = input(
         "Enter day of week for filter options \n available options include"
         "\n all (for no filter) \n sunday \n monday \n tuesday \n wednesday \n thursday \n friday \n saturday: \n")
@@ -101,8 +101,6 @@ def time_stats(df):
     print('\nCalculating The Most Frequent Times of Travel...\n')
     start_time = time.time()
 
-    # TO DO: display the most common month
-    
     # create new start month attribute
     # example 1:  df['start_month'] = df['Start Time'].dt.month
     df['start_month'] = df['Start Time'].dt.strftime("%B")
@@ -113,8 +111,6 @@ def time_stats(df):
     #print mode of start_month
     print('Most common month:', common_month)
 
-    # TO DO: display the most common day of week
-    
     # create new day of week attribute
     
     df['day_week'] = df['Start Time'].dt.strftime("%A")
@@ -124,10 +120,8 @@ def time_stats(df):
     
     #print mode of most common day
     print('Most common day of the week:', common_day)
-
-    # TO DO: display the most common start hour
-    
-        # create new hour attribute
+  
+    # create new hour attribute
     
     df['hour'] = df['Start Time'].dt.hour
     
@@ -149,9 +143,7 @@ def station_stats(df):
     print('\nCalculating The Most Popular Stations and Trip...\n')
     start_time = time.time()
 
-    # TO DO: display most commonly used start station
-
-     # create new hour attribute
+    # create new hour attribute
     
     #df['hour'] = df['Start Time'].dt.hour
     
@@ -160,19 +152,14 @@ def station_stats(df):
     
     #print mode of start station
     print('Most commonly used start station:', station_mode)
-
-    # TO DO: display most commonly used end station
-    
+  
     #gather mode
     end_station_mode =df['End Station'].mode()[0]
     
     #print mode of end station
     print('Most commonly used end station:', end_station_mode)
-
-
-    # TO DO: display most frequent combination of start station and end station trip
     
-        # create new combination of start station and end station
+    # create new combination of start station and end station
     
     df['combo_station'] = df['Start Station'] + " - " + df['End Station']
        
